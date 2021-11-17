@@ -6,6 +6,9 @@ const { hasSubscribers } = require('diagnostics_channel')
 const app = express()
 const hbs = require('hbs')
 
+// Port config
+const port = process.env.PORT || 3000
+
 // Define Paths for Express config
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewPaths = path.join(__dirname, '../templates/views')
@@ -78,6 +81,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('Running on Port 3000!')
+app.listen(port, ()=>{
+    console.log(port)
 })
